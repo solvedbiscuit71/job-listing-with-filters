@@ -5,6 +5,7 @@ export default styled.div(props => ({
   margin: '0 auto',
   padding: '1.125em',
   backgroundColor: 'white',
+  boxShadow: '0 .5em 1.5em 0 hsla(180, 29%, 50%,0.5)',
   borderRadius: '.375em',
   display: 'flex',
   alignItems: 'center',

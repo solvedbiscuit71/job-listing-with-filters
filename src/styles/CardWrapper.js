@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export default styled.div(props => ({
   backgroundColor: 'white',
   borderRadius: '.375em',
+  boxShadow: '0 .5em 1.5em 0 hsla(180, 29%, 50%,0.5)',
   padding: '1.5em',
   position: 'relative',
 
