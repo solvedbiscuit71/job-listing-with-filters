@@ -5,11 +5,11 @@ export default styled.div(props => ({
   alignItems: 'stretch',
   backgroundColor: props.theme.tagBg,
   borderRadius: '.375em',
+  color: props.theme.headerBg,
   width: 'fit-content',
 
   "& > div": {
     fontSize: ".85rem",
-    color: props.theme.headerBg,
     padding: ".375em .4em",
     borderRadius: '.375em',
     display: 'flex',
@@ -20,5 +20,7 @@ export default styled.div(props => ({
     backgroundColor: props.theme.headerBg,
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0,
-  }
+  },
+
+  padding: props.noClose ? '.375em .4em' : null
 }));

@@ -1,4 +1,8 @@
 import React from 'react';
+import CardTag from '../styles/CardTag';
+import CardWrapper from '../styles/CardWrapper';
+import FilterBadge from '../styles/FilterBadge';
+import RoleWrapper from '../styles/RoleWrapper';
 function Job(props) {
   const skills = []
   skills.push(props.role)
@@ -7,32 +11,32 @@ function Job(props) {
   skills.push(...props.tools)
 
   return (
-    <div className={props.featured ? "job job--featured" : "job"}>
-      <img className="job__logo" src={props.logo} alt={`${props.company}'s logo`} />
+    <CardWrapper featured={props.featured}>
+      <img className="logo" src={props.logo} alt={`${props.company}'s logo`} />
 
-      <div className="job__company">
+      <div className="company">
         <h1>{props.company}</h1>
 
-        { props.new ? <div className='badge'>NEW!</div> : null }
-        { props.featured ? <div className='badge'>FEATURED</div> : null }
+        { props.new ? <CardTag className='badge'><span>NEW!</span></CardTag> : null }
+        { props.featured ? <CardTag modifier='secondary' className='badge'><span>FEATURED</span></CardTag> : null }
       </div>
 
-      <div className="job__role">
-        <h1>{props.position}</h1>
+      <div className="role">
+        <h2>{props.position}</h2>
 
-        <div className="role-info">
+        <RoleWrapper>
           <div>{props.postedAt}</div>
           <span className="bullet"></span>
           <div>{props.contract}</div>
           <span className="bullet"></span>
           <div>{props.location}</div>
-        </div>
+        </RoleWrapper>
       </div>
 
-      <div className="job__skills">
-        { skills.map(( skill,index ) => <div key={index} className='tag'>{skill}</div>) }
+      <div className="skills">
+        { skills.map(( skill,index ) => <FilterBadge key={index} noClose>{skill}</FilterBadge>) }
       </div>
-    </div>
+    </CardWrapper>
   );
 }
 
