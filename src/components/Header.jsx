@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import FilterWrapper from '../styles/components/FilterWrapper';
-import Filter from '../styles/components/FilterWrapper/Filter';
-import HeaderBg from '../styles/layouts/HeaderBg';
+import FilterWrapper from '../styles/FilterWrapper';
+import FilterBadge from '../styles/FilterBadge';
+import HeaderImage from '../styles/HeaderImage';
 function Header(props) {
   const delay = 500
   const [show,setShow] = useState(props.filters.length !== 0)
@@ -15,18 +15,18 @@ function Header(props) {
 
   return (
     <header>
-      <HeaderBg />
+      <HeaderImage />
       <FilterWrapper show={show && props.filters.length !== 0} delay={delay}>
         <div>
           {
             props.filters.length !== 0 ? 
             props.filters.map(( filter,index ) => (
-              <Filter key={index}>
+              <FilterBadge key={index}>
                 <div className="name">{filter}</div>
                 <div className="close" onClick={() => props.deleteOneFilter(filter)} >
                   <img src="images/icon-remove.svg" alt="remove icon" />
                 </div>
-              </Filter>
+              </FilterBadge>
             )) 
             : null 
           }

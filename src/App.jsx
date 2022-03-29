@@ -1,7 +1,7 @@
 import { Global, ThemeProvider } from '@emotion/react';
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
-import JobList from './components/JobList';
+import Cards from './components/Cards';
 
 const theme = {
   headerBg: 'hsl(180, 29%, 50%)',
@@ -49,7 +49,7 @@ function App(props) {
 
       <ThemeProvider theme={theme}>
         <Header filters={filters} clearFilters={() => setFilters([])} deleteOneFilter={(name) => setFilters(filters.filter(item => item !== name))} />
-        <JobList jobList={jobList} />
+        <Cards jobList={jobList} />
       </ThemeProvider>
     </>
   );
