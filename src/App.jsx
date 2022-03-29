@@ -64,6 +64,9 @@ function App(props) {
 
       *,*::before,*::after {
         box-sizing: border-box;
+        transition-property: color,background-color;
+        transition-duration: 200ms;
+        transition-timing-function: ease-in-out;
       }
 
       html,body {

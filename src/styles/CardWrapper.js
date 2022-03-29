@@ -91,6 +91,10 @@ export default styled.div(props => ({
     '.role': {
       margin: '.75em 0 0',
 
+      'h2': {
+        fontSize: '1.125rem'
+      },
+
       '> div': {
         padding: '.75em 0',
         borderBottom: 'none'

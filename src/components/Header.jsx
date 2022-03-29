@@ -3,7 +3,7 @@ import FilterWrapper from '../styles/FilterWrapper';
 import FilterBadge from '../styles/FilterBadge';
 import HeaderImage from '../styles/HeaderImage';
 function Header(props) {
-  const delay = 500
+  const delay = 300 
   const [show,setShow] = useState(true)
   const handleClick = () => {
     setShow(false)
