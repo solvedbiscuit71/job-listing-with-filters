@@ -6,4 +6,8 @@ export default styled.div(props => ({
   backgroundImage: 'url("images/bg-header-mobile.svg")',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
+
+  "@media (min-width:1080px)": {
+    backgroundImage: 'url("images/bg-header-desktop.svg")'
+  }
 }));

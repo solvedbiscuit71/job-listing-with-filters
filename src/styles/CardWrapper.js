@@ -7,6 +7,7 @@ export default styled.div(props => ({
   padding: '1.5em',
   position: 'relative',
 
+
   '&::after': {
     content: props.featured ? '""' : null,
     position: 'absolute',
@@ -28,7 +29,7 @@ export default styled.div(props => ({
     left: '1.5em'
   },
 
-  '& > .company': {
+  '.company': {
     display: 'flex',
     gap: '.5em',
     alignItems: 'center',
@@ -42,11 +43,16 @@ export default styled.div(props => ({
     }
   },
 
-  '& > .role': {
+  '.role': {
     margin: '1em 0',
     'h2': {
       fontSize: '1rem',
-      margin: 0
+      margin: 0,
+
+      '&:hover': {
+        cursor: 'pointer',
+        color: props.theme.headerBg
+      }
     },
     
     '> div': {
@@ -55,10 +61,40 @@ export default styled.div(props => ({
     }
   },
 
-  '& > .skills': {
+  '.skills': {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: '1em'
-  }
+  },
+
+  '@media (min-width: 1080px)': {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingLeft: '9.375em',
+    paddingRight: '2.5em',
+
+    '& > img:first-of-type': {
+      width: '5.5em',
+      height: '5.5em',
+      top: '50%',
+      left: '2.5em',
+      transform: 'translateY(-50%)'
+    },
+
+    '.company': {
+      margin: 0
+    },
+
+    '.role': {
+      margin: '.75em 0 0',
+
+      '> div': {
+        padding: '.75em 0',
+        borderBottom: 'none'
+      }
+    }
+  },
 }));

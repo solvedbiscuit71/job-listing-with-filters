@@ -21,12 +21,15 @@ export default styled.div(props => ({
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0,
     "&:hover": {
-      cursor: 'pointer'
+      cursor: 'pointer',
+      backgroundColor: props.theme.featuredBg
     }
   },
 
   padding: props.noClose ? '.375em .4em' : null,
   "&:hover": {
-    cursor: props.noClose ? 'pointer' : 'text'
+    cursor: props.noClose ? 'pointer' : 'text',
+    color: props.noClose ? 'white' : null,
+    backgroundColor: props.noClose ? props.theme.headerBg : null
   }
 }));

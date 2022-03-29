@@ -8,23 +8,25 @@ function Job(props) {
     <CardWrapper featured={props.featured}>
       <img className="logo" src={props.logo} alt={`${props.company}'s logo`} />
 
-      <div className="company">
-        <h1>{props.company}</h1>
+      <div>
+        <div className="company">
+          <h1>{props.company}</h1>
 
-        { props.new ? <CardTag className='badge'><span>NEW!</span></CardTag> : null }
-        { props.featured ? <CardTag modifier='secondary' className='badge'><span>FEATURED</span></CardTag> : null }
-      </div>
+          { props.new ? <CardTag className='badge'><span>NEW!</span></CardTag> : null }
+          { props.featured ? <CardTag modifier='secondary' className='badge'><span>FEATURED</span></CardTag> : null }
+        </div>
 
-      <div className="role">
-        <h2>{props.position}</h2>
+        <div className="role">
+          <h2>{props.position}</h2>
 
-        <RoleWrapper>
-          <div>{props.postedAt}</div>
-          <span className="bullet"></span>
-          <div>{props.contract}</div>
-          <span className="bullet"></span>
-          <div>{props.location}</div>
-        </RoleWrapper>
+          <RoleWrapper>
+            <div>{props.postedAt}</div>
+            <span className="bullet"></span>
+            <div>{props.contract}</div>
+            <span className="bullet"></span>
+            <div>{props.location}</div>
+          </RoleWrapper>
+        </div>
       </div>
 
       <div className="skills">

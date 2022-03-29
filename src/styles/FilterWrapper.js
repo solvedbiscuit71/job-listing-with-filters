@@ -31,7 +31,14 @@ export default styled.div(props => ({
     fontWeight: 500,
 
     "&:hover": {
-      cursor: 'pointer'
+      cursor: 'pointer',
+      color: props.theme.headerBg,
+      textDecoration: 'underline'
+
     }
+  },
+
+  "@media (min-width:1080px)": {
+    padding: '1.125em 2.5em'
   }
 }));
