@@ -4,12 +4,6 @@ import CardWrapper from '../styles/CardWrapper';
 import FilterBadge from '../styles/FilterBadge';
 import RoleWrapper from '../styles/RoleWrapper';
 function Job(props) {
-  const skills = []
-  skills.push(props.role)
-  skills.push(props.level)
-  skills.push(...props.languages)
-  skills.push(...props.tools)
-
   return (
     <CardWrapper featured={props.featured}>
       <img className="logo" src={props.logo} alt={`${props.company}'s logo`} />
@@ -34,7 +28,7 @@ function Job(props) {
       </div>
 
       <div className="skills">
-        { skills.map(( skill,index ) => <FilterBadge key={index} noClose>{skill}</FilterBadge>) }
+        { props.skills.map(( skill,index ) => <FilterBadge key={index} onClick={() => props.addFilter(skill)} noClose>{skill}</FilterBadge>) }
       </div>
     </CardWrapper>
   );

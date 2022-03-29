@@ -27,6 +27,10 @@ export default styled.div(props => ({
     border: 'none',
     color: props.theme.textColorLight,
     fontSize: '.85rem',
-    fontWeight: 500
+    fontWeight: 500,
+
+    "&:hover": {
+      cursor: 'pointer'
+    }
   }
 }));

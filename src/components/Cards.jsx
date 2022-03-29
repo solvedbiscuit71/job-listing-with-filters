@@ -4,7 +4,7 @@ import Card from './Card';
 function Cards(props) {
   return (
     <CardContainer>
-      { props.jobList && props.jobList.map(job => <Card key={job.id} {...job} />)}
+      { props.jobList && props.jobList.map(job => <Card key={job.id} {...job} addFilter={props.addFilter} />)}
     </CardContainer>
   );
 }

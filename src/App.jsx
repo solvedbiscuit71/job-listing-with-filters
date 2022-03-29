@@ -14,11 +14,7 @@ const theme = {
 
 function App(props) {
   const [jobList,setJobList] = useState(null)
-  const [filters,setFilters] = useState([
-    "Frontend",
-    "CSS",
-    "JavaScript"
-  ])
+  const [filters,setFilters] = useState([])
 
   useEffect(_ => {
     fetch('data.json')
@@ -28,6 +24,13 @@ function App(props) {
       })
       .catch(error => console.log(error))
   },[])
+
+  const addFilter = (name) => {
+    const isThere =  filters.find(filter => filter === name)
+    if (!isThere) {
+      setFilters([...filters,name])
+    }
+  }
 
   return ( 
     <>
@@ -49,7 +52,7 @@ function App(props) {
 
       <ThemeProvider theme={theme}>
         <Header filters={filters} clearFilters={() => setFilters([])} deleteOneFilter={(name) => setFilters(filters.filter(item => item !== name))} />
-        <Cards jobList={jobList} />
+        <Cards jobList={jobList} addFilter={addFilter} />
       </ThemeProvider>
     </>
   );

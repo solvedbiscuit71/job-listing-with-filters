@@ -20,7 +20,13 @@ export default styled.div(props => ({
     backgroundColor: props.theme.headerBg,
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0,
+    "&:hover": {
+      cursor: 'pointer'
+    }
   },
 
-  padding: props.noClose ? '.375em .4em' : null
+  padding: props.noClose ? '.375em .4em' : null,
+  "&:hover": {
+    cursor: props.noClose ? 'pointer' : 'text'
+  }
 }));

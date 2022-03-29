@@ -4,7 +4,7 @@ import FilterBadge from '../styles/FilterBadge';
 import HeaderImage from '../styles/HeaderImage';
 function Header(props) {
   const delay = 500
-  const [show,setShow] = useState(props.filters.length !== 0)
+  const [show,setShow] = useState(true)
   const handleClick = () => {
     setShow(false)
     setTimeout(() => {
