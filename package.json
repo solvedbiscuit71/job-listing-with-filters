@@ -1,5 +1,5 @@
 {
-  "name": "job-listing-with-filtering",
+  "name": "job-listing-with-filters",
   "version": "1.0.0",
   "description": "This is a challenge from frontendmentor.io",
   "main": "src/index.js",
