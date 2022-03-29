@@ -3,7 +3,7 @@ import Job from './Job';
 function JobList(props) {
   return (
     <section className="job-list">
-      <Job />
+      { props.jobList && props.jobList.map(job => <Job key={job.id} {...job} />)}
     </section>
   );
 }

@@ -1,37 +1,38 @@
 import React from 'react';
 function Job(props) {
+  const skills = []
+  skills.push(props.role)
+  skills.push(props.level)
+  skills.push(...props.languages)
+  skills.push(...props.tools)
+
   return (
-    <div className="job job--featured">
-      <img src="images/photosnap.svg" alt="photosnap logo" />
+    <div className={props.featured ? "job job--featured" : "job"}>
+      <img className="job__logo" src={props.logo} alt={`${props.company}'s logo`} />
 
-      <div className="company">
-        <h1>Photosnap</h1>
+      <div className="job__company">
+        <h1>{props.company}</h1>
 
-        <div className="tag">NEW!</div>
-        <div className="tag">FEATURED</div>
+        { props.new ? <div className='badge'>NEW!</div> : null }
+        { props.featured ? <div className='badge'>FEATURED</div> : null }
       </div>
 
-      <div className="role">
-        <h1>Senior Frontend Developer</h1>
+      <div className="job__role">
+        <h1>{props.position}</h1>
 
-        <div className="role-flex">
-          <div>1d ago</div>
-          <div className="bullet"></div>
-          <div>Full Time</div>
-          <div className="bullet"></div>
-          <div>USA Only</div>
+        <div className="role-info">
+          <div>{props.postedAt}</div>
+          <span className="bullet"></span>
+          <div>{props.contract}</div>
+          <span className="bullet"></span>
+          <div>{props.location}</div>
         </div>
       </div>
 
-      <div className="skills">
-        <div className="tag">Frontend</div>
-        <div className="tag">Senior</div>
-        <div className="tag">HTML</div>
-        <div className="tag">CSS</div>
-        <div className="tag">JavaScript</div>
+      <div className="job__skills">
+        { skills.map(( skill,index ) => <div key={index} className='tag'>{skill}</div>) }
       </div>
     </div>
-
   );
 }
 
