@@ -25,11 +25,36 @@ function App(props) {
       .catch(error => console.log(error))
   },[])
 
-  const addFilter = (name) => {
-    const isThere =  filters.find(filter => filter === name)
-    if (!isThere) {
-      setFilters([...filters,name])
+  const isInArray = (item,array) => {
+    const isThere = array.find(element => item === element)
+    return isThere !== undefined ? true : false
+  }
+
+  const addFilter = (skill) => {
+    if (!isInArray(skill,filters)) {
+      setFilters([...filters,skill])
     }
+  }
+
+  const FilterJob = () => {
+    if (filters.length === 0) {
+      return jobList
+    }
+
+    return (jobList.filter(job => {
+      let count = 0
+
+      job.skills.forEach(skill => {
+        if (isInArray(skill,filters)) {
+          count++
+        }
+      })
+
+      if (count === filters.length) {
+        return true
+      }
+      return false
+    }))
   }
 
   return ( 
@@ -52,7 +77,7 @@ function App(props) {
 
       <ThemeProvider theme={theme}>
         <Header filters={filters} clearFilters={() => setFilters([])} deleteOneFilter={(name) => setFilters(filters.filter(item => item !== name))} />
-        <Cards jobList={jobList} addFilter={addFilter} />
+        <Cards jobList={FilterJob()} addFilter={addFilter} />
       </ThemeProvider>
     </>
   );
