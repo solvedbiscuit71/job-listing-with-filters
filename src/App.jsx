@@ -48,7 +48,7 @@ function App(props) {
       />
 
       <ThemeProvider theme={theme}>
-        <Header filters={filters} clearFilters={() => setFilters([])} />
+        <Header filters={filters} clearFilters={() => setFilters([])} deleteOneFilter={(name) => setFilters(filters.filter(item => item !== name))} />
         <JobList jobList={jobList} />
       </ThemeProvider>
     </>

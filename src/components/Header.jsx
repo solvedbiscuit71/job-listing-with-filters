@@ -9,19 +9,20 @@ function Header(props) {
     setShow(false)
     setTimeout(() => {
       props.clearFilters()
+      setShow(true)
     },delay)
   }
 
   return (
     <HeaderWrapper>
-      <FilterWrapper show={show} delay={delay}>
+      <FilterWrapper show={show && props.filters.length !== 0} delay={delay}>
         <div>
           {
             props.filters.length !== 0 ? 
             props.filters.map(( filter,index ) => (
               <Filter key={index}>
                 <div className="name">{filter}</div>
-                <div className="close">
+                <div className="close" onClick={() => props.deleteOneFilter(filter)} >
                   <img src="images/icon-remove.svg" alt="remove icon" />
                 </div>
               </Filter>
