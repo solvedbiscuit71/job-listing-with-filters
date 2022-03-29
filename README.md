@@ -21,8 +21,8 @@ Filter job listings based on the categories like,
 
 # Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/job-listing-with-filters-in-react-and-emotion-for-styled-components-BJpeEhemq)
+- Live Site URL: [Add live site URL here](https://job-listing-with-filters.vercel.app/)
 
 # My process
 
