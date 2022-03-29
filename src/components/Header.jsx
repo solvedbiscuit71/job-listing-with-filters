@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FilterWrapper from '../styles/components/FilterWrapper';
 import Filter from '../styles/components/FilterWrapper/Filter';
-import HeaderWrapper from '../styles/layouts/HeaderWrapper';
+import HeaderBg from '../styles/layouts/HeaderBg';
 function Header(props) {
   const delay = 500
   const [show,setShow] = useState(props.filters.length !== 0)
@@ -14,7 +14,8 @@ function Header(props) {
   }
 
   return (
-    <HeaderWrapper>
+    <header>
+      <HeaderBg />
       <FilterWrapper show={show && props.filters.length !== 0} delay={delay}>
         <div>
           {
@@ -32,7 +33,7 @@ function Header(props) {
         </div>
         <button onClick={handleClick}>Clear</button>
       </FilterWrapper>
-    </HeaderWrapper>
+    </header>
   );
 }
 

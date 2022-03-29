@@ -8,10 +8,8 @@ export default styled.div(props => ({
   borderRadius: '.375em',
   display: 'flex',
   alignItems: 'center',
-  position: 'absolute',
-  left: '50%',
-  bottom: '0',
-  transform: 'translate(-50%,70%)',
+  position: 'relative',
+  top: '-2em',
 
   opacity: props.show ? 1 : 0,
   transition: `opacity ${props.delay}ms ease-in-out`,
