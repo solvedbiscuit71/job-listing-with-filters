@@ -2,14 +2,11 @@ import React from 'react';
 function Header(props) {
   return (
     <header>
-      <div className="header__filters">
-        <div className="filter">
-          <div className="tag">Frontend</div>
-          <div className="tag">CSS</div>
-          <div className="tag">JavaScript</div>
+      <div className={ props.filters.length !== 0 ? "filters filters--show" : "filters" }>
+        <div className="filters-container">
+          { props.filters.length !== 0 ? props.filters.map(( filter,index ) => <div key={index} className='filter'>{filter}</div>) : null }
         </div>
-
-        <button>Clear</button>
+        <button onClick={props.clearFilters}>Clear</button>
       </div>
     </header>
   );
